@@ -160,10 +160,11 @@ end
 def team_colors(team)
 colorOutput = []
   game_hash.each do |location, team_data|
-    currentLocation = location
-    team_data.each do |attribute, data|
-      if attribute == team
-        colorOutput = game_hash[currentLocation][:team_name][:colors]
+    if team_data[team_name] == team
+      team_data.each do |attribute, data|
+        if attribute == :colors
+          colorOutput = data
+        end
       end
     end
   end
