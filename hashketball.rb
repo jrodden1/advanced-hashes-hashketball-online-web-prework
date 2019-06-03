@@ -1,4 +1,3 @@
-require "pry"
 def game_hash
   hash = {
     :home => {
@@ -115,5 +114,4 @@ def game_hash
     }
   }
 return hash
-binding.pry
 end
