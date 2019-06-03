@@ -163,7 +163,7 @@ colorOutput = []
     currentLocation = location
     team_data.each do |attribute, data|
       if attribute == team
-        colorOutput = game_hash[location][:team_name][:colors]
+        colorOutput = game_hash[currentLocation][:team_name][:colors]
       end
     end
   end
