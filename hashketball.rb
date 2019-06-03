@@ -115,3 +115,7 @@ def game_hash
   }
 return hash
 end
+
+def num_points_scored(player_name)
+  game_hash[:players][player_name][points]
+end
