@@ -118,6 +118,21 @@ return hash
 end
 
 def num_points_scored(player_name)
-  game_hash[:players][player_name][points]
-  binding.pry
+  points = nil
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          if player == player_name
+            stats.each do |stat, value|
+              if stat == :points
+                points = :points
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  points
 end
