@@ -163,6 +163,7 @@ colorOutput = []
     team_data.each do |attribute, data|
       if attribute == :colors
         colorOutput = data
+      end
     end
   end
   colorOutput
