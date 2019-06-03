@@ -202,3 +202,17 @@ def player_numbers(team)
   end
   jerseyNumbersArr
 end
+
+def player_stats(player_name)
+  outputHash = {}
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      data.each do |player, stats|
+        if player == player_name
+          outputHash = stats
+        end
+      end
+    end
+  end
+  outputHash
+end
