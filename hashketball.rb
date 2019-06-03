@@ -242,7 +242,7 @@ def big_shoe_rebounds
       if attribute == :players
         data.each do |player, stats|
           stats.each do |stat, statValue|
-            if stat == :shoe_size
+            if stat == :shoe
               if statValue == biggestShoeSize
                 reboundStat = stats[:rebounds]
               end
