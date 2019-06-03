@@ -335,4 +335,4 @@ def winning_team
   end
 
   winningTeam
-end 
+end
