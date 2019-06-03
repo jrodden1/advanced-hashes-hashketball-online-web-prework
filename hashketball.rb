@@ -314,8 +314,8 @@ def total_points(location)
 end
 
 def winning_team
-  pointsHome = nil
-  pointsAway = nil
+  pointsHome = 0
+  pointsAway = 0
 
   game_hash.each do |location, team_data|
   case location
