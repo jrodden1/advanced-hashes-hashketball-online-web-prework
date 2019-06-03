@@ -366,3 +366,47 @@ def player_with_longest_name
   end
   longestName
 end
+
+def most_steals
+  stealsArr = []
+
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          stats.each do |stat, statValue|
+            if stat == :steals
+              stealsArr << statValue
+            end
+          end
+        end
+      end
+    end
+  end
+  mostSteals = stealsArr.max
+
+  mostStealsPlayer = ""
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          stats.each do |stat, statValue|
+            if stat == :steals 
+              if statValue == mostSteals
+                mostStealsPlayer = player
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  mostStealsPlayer
+end
+
+def long_name_steals_a_ton?
+  longestName = player_with_longest_name
+  mostStealsName = most_steals
+
+  longestName == mostStealsName
+end
