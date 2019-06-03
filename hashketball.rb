@@ -318,11 +318,12 @@ def winning_team
   pointsAway = 0
 
   game_hash.each do |location, team_data|
-  case location
-  when :home
-    pointsHome = total_points(:home)
-  when :away
-    pointsAway = total_points(:away)
+    case location
+    when :home
+      pointsHome = total_points(:home)
+    when :away
+      pointsAway = total_points(:away)
+    end
   end
 
   winningTeam = ""
@@ -336,3 +337,4 @@ def winning_team
 
   winningTeam
 end
+end 
