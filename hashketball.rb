@@ -258,7 +258,6 @@ end
 def most_points_scored
   pointsArr = []
 
-  #First, get all the shoe sizes and put them into an array to find out the one with the biggestShoeSize
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
@@ -274,8 +273,6 @@ def most_points_scored
   end
   mostPoints = pointsArr.max
 
-  #Now we are going to use the biggestShoeSize number to select the correct player and grab that player's rebounds stats
-  #One issue with this logic is that if there are multiple players that have tied for the max shoe size
   mostPointsPlayer = ""
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
@@ -293,4 +290,49 @@ def most_points_scored
     end
   end
   mostPointsPlayer
+end
+
+def total_points(location)
+  pointsTotal = 0
+  
+  game_hash.each do |hashlocation, team_data|
+    if location == hashlocation
+      team_data.each do |attribute, data|
+        if attribute == :players
+          data.each do |player, stats|
+            stats.each do |stat, statValue|
+              if stat == :points
+                pointsTotal = pointsTotal + statValue
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  pointsTotal
+end
+
+def winning_team
+  pointsHome = nil
+  pointsAway = nil
+
+  game_hash.each do |location, team_data|
+  case location
+  when :home
+    pointsHome = total_points(:home)
+  when :away
+    pointsAway = total_points(:away)
+  end
+
+  winningTeam = ""
+
+  #doesn't account for if there is a tie game 
+  if pointsHome > pointsAway
+    winningTeam = game_hash[:home][:team_name]
+  else
+    winningTeam = game_hash[:away][:team_name]
+  end
+
+  winningTeam
 end
