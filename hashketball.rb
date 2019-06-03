@@ -344,11 +344,25 @@ def player_with_longest_name
     team_data.each do |attribute, data|
         if attribute == :players
           data.each do |player, stats|
-            nameLengthArr << player.to_s.length
+            nameLengthArr << player.length
           end
         end
       end
     end
   end
-  pointsTotal
+
+  longestNameInt = nameLengthArr.max
+  longestName = ""
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          if player.length == longestNameInt
+            longestName = player
+          end
+        end
+      end
+    end
+  end
+  longestName
 end
