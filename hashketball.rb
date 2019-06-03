@@ -294,7 +294,7 @@ end
 
 def total_points(location)
   pointsTotal = 0
-  
+
   game_hash.each do |hashlocation, team_data|
     if location == hashlocation
       team_data.each do |attribute, data|
@@ -327,7 +327,7 @@ def winning_team
 
   winningTeam = ""
 
-  #doesn't account for if there is a tie game 
+  #doesn't account for if there is a tie game
   if pointsHome > pointsAway
     winningTeam = game_hash[:home][:team_name]
   else
