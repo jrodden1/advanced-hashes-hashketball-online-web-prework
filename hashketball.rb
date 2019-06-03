@@ -1,4 +1,3 @@
-require 'pry'
 def game_hash
   hash = {
     :home => {
@@ -336,5 +335,4 @@ def winning_team
   end
 
   winningTeam
-end
 end 
