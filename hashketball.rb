@@ -265,7 +265,7 @@ def most_points_scored
         data.each do |player, stats|
           stats.each do |stat, statValue|
             if stat == :points
-              pointsArr = stat[:points]
+              pointsArr << stat[:points]
             end
           end
         end
