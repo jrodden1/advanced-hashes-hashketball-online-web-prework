@@ -193,7 +193,7 @@ def player_numbers(team)
             stats.each do |stat, statValue|
               if stat == :number
                 jerseyNumbersArr << statValue
-              end 
+              end
             end
           end
         end
