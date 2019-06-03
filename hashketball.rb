@@ -292,5 +292,5 @@ def most_points_scored
       end
     end
   end
-  reboundStat
+  mostPointsPlayer
 end
