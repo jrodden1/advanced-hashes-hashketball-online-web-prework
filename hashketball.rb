@@ -391,7 +391,7 @@ def most_steals
       if attribute == :players
         data.each do |player, stats|
           stats.each do |stat, statValue|
-            if stat == :steals 
+            if stat == :steals
               if statValue == mostSteals
                 mostStealsPlayer = player
               end
