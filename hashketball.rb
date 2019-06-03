@@ -170,3 +170,15 @@ colorOutput = []
   end
   colorOutput
 end
+
+def team_names
+teamsOutput = []
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :team_name
+          teamsOutput << data
+      end
+    end
+  end
+  teamsOutput
+end
